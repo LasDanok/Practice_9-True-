@@ -1,0 +1,69 @@
+1)
+import time
+
+def find(lst,x):
+    for y in range(len(lst)):
+        if lst[y]==x:
+            return y
+
+start=time.time()
+
+lst = []
+
+for i in range (-8,5):
+    lst.append(i)
+x=3
+
+end=time.time()
+print(lst)
+print(find(lst,3))
+print(end-start)
+=====================================================
+2)
+import time
+
+def find (lst,x):
+    left=0
+    right=len(lst)-1
+    while left<=right:
+        l=(left+right)//2
+        if lst[l]==x:
+            return True
+        if lst[l]<x:
+            lest=l+-1
+        elif lst[l]>x:
+            right=l-1
+            
+lst = []
+for i in range (-8,5):
+    lst.append(i)
+x=3
+print(lst)
+start=time.time()
+print(find(lst,3))
+end=time.time()
+print(end-start)  
+=====================================================
+3)
+import time
+
+def find_r(l,x,left,right):
+    s=(left+right)//2
+    if l[s]==x:
+        print(s)
+    elif l[s]<x:
+        find_r(l,x,s+1,right)
+    elif l[s]>x:
+        find_r(l,x,left,s-1)
+    
+lst = []
+for i in range (-8,5):
+    lst.append(i)
+x=4
+print(lst)
+start=time.time()
+left=0
+right=len(lst)-1
+find_r(lst,x,left,right)
+end=time.time()
+print(end-start)        
